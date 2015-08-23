@@ -14,6 +14,7 @@ module.exports.app = function() {
         var port = process.env.PORT || 8000;
         var app = express();
         var router = express.Router();
+        var errorPage = fs.readFileSync("404.html", "UTF-8");
 
         app.use(express.static('assets'));
         app.set('title', "GUSAC Carnival 4");
@@ -21,6 +22,54 @@ module.exports.app = function() {
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended: true}));
 
+        router.get('/', function(req, res) {
+                var data = fs.readFileSync("views/index.html", "UTF-8");
+                res.send(data.toString());
+        });
+
+        router.get('/about', function(req, res) {
+                var data = fs.readFileSync("views/about.html", "UTF-8");
+                res.send(data.toString());
+        });
+
+        router.get('/contact', function(req, res) {
+                var data = fs.readFileSync("views/contact.html", "UTF-8");
+                res.send(data.toString());
+        });
+
+        router.get('/events', function(req, res) {
+                var data = fs.readFileSync("views/events.html", "UTF-8");
+                res.send(data.toString());
+        });
+
+        router.get('/register', function(req, res) {
+                var data = fs.readFileSync("views/register.html", "UTF-8");
+                res.send(data.toString());
+        });
+
+        router.get('/[0-9]', function(req, res) {
+                res.redirect(errorPage);
+        });
+
+        router.get('*', function(req, res) {
+                var match = 'views/' + req.params[0] + '.html';
+                fs.exists(match, function(present) {
+                        if(present) {
+                                fs.readFile(match, function(err, data) {
+                                        if(err) {
+                                                res.send(errorPage.toStrng(), "UTF-8");
+                                        }
+                                        else {
+                                                res.end(data, "UTF-8");
+                                        }
+                                });
+                        }
+                        else {
+                                res.end(errorPage.toString(), "UTF-8");
+                        }
+                });
+        });
+        
         app.use('/', router);
 
         http.createServer(app).listen(port, function() {
