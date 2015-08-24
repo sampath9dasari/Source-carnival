@@ -37,6 +37,10 @@ module.exports.app = function() {
                 res.send(data.toString());
         });
 
+        router.post('/controller/contact', function(req, res) {
+                
+        });
+
         router.get('/events', function(req, res) {
                 var data = fs.readFileSync("views/events.html", "UTF-8");
                 res.send(data.toString());
@@ -45,6 +49,10 @@ module.exports.app = function() {
         router.get('/register', function(req, res) {
                 var data = fs.readFileSync("views/register.html", "UTF-8");
                 res.send(data.toString());
+        });
+
+        router.post('/controller/register', function(req, res) {
+                
         });
 
         router.get('/[0-9]', function(req, res) {
