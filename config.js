@@ -17,7 +17,7 @@ module.exports.db = {
 }
 
 module.exports.emailconfig = {
-        uname: "akhilhector",
-        pwd: "eatsleepcode123!@#",
+        uname: "somename",
+        pwd: "somepassword",
         org: "www.gusaccarnival.org", 
 }
