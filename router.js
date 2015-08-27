@@ -38,7 +38,10 @@ module.exports.app = function() {
         });
 
         router.post('/controller/contact', function(req, res) {
-                
+                var name = req.body.name,
+                    phone = req.body.phone,
+                    email = req.body.email,
+                    query = req.body.query;
         });
 
         router.get('/events', function(req, res) {
@@ -52,7 +55,14 @@ module.exports.app = function() {
         });
 
         router.post('/controller/register', function(req, res) {
-                
+               var name = req.body.name,
+                   college = req.body.collegename,
+                   collegeid = req.body.collegeid,
+                   email = req.body.email,
+                   dept = req.body.dept,
+                   pwd = req.body.pass1,
+                   confpwd = req.body.pass2,
+                   phone = req.body.phone;
         });
 
         router.get('/[0-9]', function(req, res) {
