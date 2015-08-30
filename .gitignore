@@ -11,7 +11,7 @@ node_modules/
 /config.js
 
 # The Database Schema
-*.sql
+
 
 # Excluding the important assets
 assets/*
