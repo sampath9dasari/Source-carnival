@@ -1,4 +1,3 @@
-
 -- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: gusac
@@ -73,7 +72,7 @@ CREATE TABLE `update1form` (
 
 LOCK TABLES `update1form` WRITE;
 /*!40000 ALTER TABLE `update1form` DISABLE KEYS */;
-INSERT INTO `update1form` VALUES ('akhil maddu','stanford',1210313333,'akhil.maddu021@gmail.com','cse','bangbang','bangbang',90),('akhil maddu','stanford',1210313334,'akhil.maddu021@gmail.com','cse','bangbang','bangbang',2147483647),('akhil maddu','stanford',2147483647,'akhil.maddu021@gmail.com','cse','!Ã˜Â§KÃ¦Ã‘Ã·\ZT\Ã™cÃ‚Ã¤','bangbang',2147483647);
+INSERT INTO `update1form` VALUES ('akhil maddu','stanford',1210313333,'akhil.maddu021@gmail.com','cse','bangbang','bangbang',90),('akhil maddu','stanford',1210313334,'akhil.maddu021@gmail.com','cse','bangbang','bangbang',2147483647),('akhil maddu','stanford',2147483647,'akhil.maddu021@gmail.com','cse','!Ø§KæÑ÷\ZT\ZÙcÂä','bangbang',2147483647);
 /*!40000 ALTER TABLE `update1form` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
