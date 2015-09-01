@@ -1,5 +1,5 @@
 {
-  "name": "Gusac Carnival",
+  "name": "GCarnival",
   "version": "0.0.1",
   "description": "This is going to be the front end application server that serves requests and hosts the website for www.gusaccarnival.org. This is not an application generic, but specific to the purpose",
   "author": "Akhil Pandey <akhilhector.1@gmail.com>",
@@ -8,12 +8,9 @@
   "email": "akhilhector.1@gmail.com"
 }],
   "scripts": {
-    "start": "node web.js",
-    "predeploy": "echo im about to deploy",
-    "postdeploy": "echo ive deployed",
-    "prepublish": "coffee --bare --compile --output lib/foo src/foo/*.coffee"
+    "start": "node index.js"
   },
-  "main": "./app.js",
+  "main": "./index.js",
   "repository": {
   "type": "git",
   "url": "https://github.com/AkhilHector/Source-carnival"
