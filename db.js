@@ -72,7 +72,32 @@ if(typeof dbconf.pool == 'object') {
                     min: dbconf.pool.min || 5,
                     max: dbconf.pool.max || 100,
                     log: dbconf.pool.log || true,
-                    idleTimeoutMillis : dbconf.pool
+                    idleTimeoutMillis: dbconf.pool.idleTimeoutMillis || 60000,
+                    reapIntervalMillis: dbconf.pool.reapIntervalMillis || 30000,
+                    create: function(callback) {
+                            r.connect({
+                                    host: dbconf.host,
+                                    port: dbconf.port
+                            }, function(err,conn) {
+                                    if(err) {
+                                            var msg = "Connection failed !");
+                                            console.log("[LOGERR] Couldn't connect to the rethinkdb pool");
+                                            callback(new Error(msg));
+                                    }
+                                    else {
+                                            var id = Math.floor(Math.random()*10000);
+                                            conn.use(dbconf.db);
+                                            console.log("[LOGINFO] connected to the database %s", dbconf.db);
+                                            callback(null, conn);
+                                    }
+                            });
+                    },
+                    destroy: function(conn) {
+                            console.log("[LOGINFO] connection has been closed");
+                            conn.close(conn);
+                    }
+            })
+}
 
 module.exports.login = function(callback) {
         console.log("something");
