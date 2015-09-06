@@ -99,11 +99,43 @@ if(typeof dbconf.pool == 'object') {
             })
 }
 
-module.exports.login = function(callback) {
-        console.log("something");
+module.exports.alogin = function(callback) {
+        connection(function(err, conn) {
+                if(err) {
+                        console.log("[LOGERR] %s:%s", err.name, err.msg);
+                        return callback(null);
+                }
+                r.table("mainacc").filter({user: user}).run(conn, function(err, data) {
+                        if(err) {
+                                console.log("[LOGERR] Couldnot login %s:%s", err.name, err.msg);
+                                return callback(null);
+                        }
+                        if(!data.hasNext()) {
+                                console.log("[LOGERR] User %s not available", user);
+                                release(conn);
+                                return callback(null);
+                        }
+                        data.next(function(err, res) {
+                                if(err) {
+                                        console.log("[OGERR] %s:%s", err.name, err.msg);
+                                        callback(null);
+                                }
+                                else {
+                                        if(data.pass === pass) {
+                                                callback(res);
+                                        }
+                                        else {
+                                                console.log("[LOGERR] User %s's password doesn't match", user);
+                                                callback(null);
+                                        }
+                                }
+                                release(conn);
+                        });
+                });
+        });
 }
 
-module.exports.alogin = function(callback) {
+module.exports.login = function(callback) {
         console.log("something");
 }
 
