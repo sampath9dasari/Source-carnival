@@ -65,6 +65,12 @@ function saltandhash(pass, callback) {
         callback(salt, md5(pass + salt));
 }
 
+function validate(pass, passwithhash, callback) {
+        var salt = passwithhash.substr(0, 10);
+        var newhash = salt + md5(pass + salt);
+        callback(null, passwithhash == newhash);
+}
+
 if(typeof dbconf.pool == 'object') {
         var g = require('generic-pool'),
             pool = g.Pool({
@@ -99,12 +105,13 @@ if(typeof dbconf.pool == 'object') {
             })
 }
 
-module.exports.alogin = function(callback) {
+module.exports.alogin = function(user, pass, callback) {
         connection(function(err, conn) {
                 if(err) {
                         console.log("[LOGERR] %s:%s", err.name, err.msg);
                         return callback(null);
                 }
+                
                 r.table("mainacc").filter({user: user}).run(conn, function(err, data) {
                         if(err) {
                                 console.log("[LOGERR] Couldnot login %s:%s", err.name, err.msg);
@@ -115,6 +122,7 @@ module.exports.alogin = function(callback) {
                                 release(conn);
                                 return callback(null);
                         }
+                        
                         data.next(function(err, res) {
                                 if(err) {
                                         console.log("[OGERR] %s:%s", err.name, err.msg);
@@ -135,23 +143,87 @@ module.exports.alogin = function(callback) {
         });
 }
 
-module.exports.login = function(callback) {
-        console.log("something");
+module.exports.login = function(user, pass, callback) {
+        connection(function(err, conn) {
+                if(err) {
+                        console.log("[LOGERR] %s:%s", err.name, err.msg);
+                        callback(null);
+                        return;
+                }
+                
+                r.table("mainacc").filter({user: user}).limit(1).run(conn, function(err, data) {
+                        if(err) {
+                                console.log("[LOGERR] %s:%s", err.name, err.msg);
+                                callback(null);
+                        }
+                        else {
+                                if(data.hasNext()) {
+                                        data.next(function(err, val) {
+                                                if(err) {
+                                                        console.log("[LOGERR] %s:%s", err.name, err.msg);
+                                                        release(conn);
+                                                }
+                                                else {
+                                                        validate(pass, val.pass, function(err, res) {
+                                                                if(res) {
+                                                                        callback(null, val);
+                                                                }
+                                                                else {
+                                                                        callback("invalid password");
+                                                                }
+                                                                release(conn);
+                                                        });
+                                                }
+                                        });
+                                }
+                                else {
+                                        console.log("[LOGINFO] User %s not found, %s", err.name, err.msg);
+                                        callback("user not found");
+                                        release(conn);
+                                }
+                        }
+                });
+        });
 }
 
 module.exports.getData = function(callback) {
-        console.log("something");
+        connection(function(err, conn) {
+                if(err) {
+                        return callback(err);
+                }
+                
+                r.table("accounts").run(conn, function(err, data) {
+                        if(err) {
+                                release(conn);
+                                return callback(err);
+                        }
+                        
+                        data.toArray(function(err, res) {
+                                if(err) {
+                                        callback(err);
+                                }
+                                else {
+                                        callback(null, res);
+                                }
+                                release(conn);
+                        });
+                });
+        });
+}
+
+module.exports.accAdd = function(callback) {
+        console.log("somethig");
 }
 
 module.exports.accInfo = function(callback) {
         console.log("something");
 }
 
-module.exports.updateAcc = function(callback) {
+module.exports.accUpdate = function(callback) {
         console.log("something");
 }
 
-module.exports.deleteAcc = function(callback) {
+module.exports.accDelete = function(callback) {
         console.log("something");
 }
 
