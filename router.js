@@ -65,6 +65,11 @@ module.exports.app = function() {
                    phone = req.body.phone;
         });
 
+        router.get('/team', function(req, res) {
+                var data = fs.readFileSync("views/team.html", "UTF-8");
+                res.send(data.toString());
+        });
+
         router.get('/[0-9]', function(req, res) {
                 res.redirect(errorPage);
         });
