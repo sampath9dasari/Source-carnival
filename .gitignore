@@ -14,7 +14,3 @@ node_modules/
 
 
 # Excluding the important assets
-assets/css/*
-!assets/css/style.css
-assets/js/*
-!assets/js/main.js
