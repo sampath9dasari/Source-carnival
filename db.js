@@ -112,7 +112,7 @@ module.exports.alogin = function(user, pass, callback) {
                         return callback(null);
                 }
                 
-                r.table("mainacc").filter({user: user}).run(conn, function(err, data) {
+                r.table("mainaccounts").filter({user: user}).run(conn, function(err, data) {
                         if(err) {
                                 console.log("[LOGERR] Couldnot login %s:%s", err.name, err.msg);
                                 return callback(null);
@@ -151,7 +151,7 @@ module.exports.login = function(user, pass, callback) {
                         return;
                 }
                 
-                r.table("mainacc").filter({user: user}).limit(1).run(conn, function(err, data) {
+                r.table("mainaccounts").filter({user: user}).limit(1).run(conn, function(err, data) {
                         if(err) {
                                 console.log("[LOGERR] %s:%s", err.name, err.msg);
                                 callback(null);
@@ -192,7 +192,7 @@ module.exports.getData = function(callback) {
                         return callback(err);
                 }
                 
-                r.table("accounts").run(conn, function(err, data) {
+                r.table("mainaccounts").run(conn, function(err, data) {
                         if(err) {
                                 release(conn);
                                 return callback(err);
@@ -211,8 +211,58 @@ module.exports.getData = function(callback) {
         });
 }
 
-module.exports.accAdd = function(callback) {
-        console.log("somethig");
+module.exports.accAdd = function(newdata, callback) {
+        connection(function(err, conn) {
+                if(err) {
+                        console.log("[LOGERR] %s:%s", err.name, err.msg);
+                        callback(err);
+                        return 
+                }
+                
+                r.table("mainaccounts").filter(function(doc) {
+                        return r.or(doc('user')).eq(newdata.user), doc('email').eq(newdata.email));
+                }).limit(1).run(conn, function(err, data) {
+                        if(err) {
+                                console.log("[LOGERR] %s:%s", err.name, err.msg);
+                        }
+                        else {
+                                if(data.hasNext()) {
+                                        data.next(function(err, res) {
+                                                if(err) {
+                                                        console.log("[LOGERR] %s:%s", err.name, err.msg);
+                                                }
+                                                else {
+                                                        if(res.user == newdata.user) {
+                                                                callback("username taken");
+                                                        }
+                                                        else {
+                                                                callback("email taken");
+                                                        }
+                                                }
+                                                release(conn);
+                                        });
+                                }
+                                else {
+                                        saltandhash(newdata.pass, function(hash) {
+                                                newdata.pass = hash;
+                                                newdata.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+                                                
+                                                r.table("accounts").insert(newdata).run(conn, function(err, res) {
+                                                        if(res && res.inserted == 1) {
+                                                                newdata['id'] = res['generatedkeys'][0];
+                                                                callback(null, newdata);
+                                                        }
+                                                        else {
+                                                                console.log("[LOGERR] %s:%s", err.name, err.msg);
+                                                                callback(null);
+                                                        }
+                                                        release(conn);
+                                                });
+                                        });
+                                }
+                        }
+                });
+        });
 }
 
 module.exports.accInfo = function(callback) {
