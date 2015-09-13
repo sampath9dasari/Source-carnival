@@ -30,6 +30,7 @@
     "express": "4.13.x",
     "generic-pool": "2.2.x",
     "jade": "1.11.x",
+    "moment": "2.10.x",
     "request": "2.60.x",
     "rethinkdb": "2.0.x",
     "sendgrid": "1.9.x"

@@ -3,7 +3,8 @@
  * Team pclubGU
  * The MIT License
  */
-var m = require('rethinkdb'),
+var r = require('rethinkdb'),
+    moment = require('moment'),
     dbconf = require('./config').db,
     useConnPooling = false,
     connPool = null;
@@ -71,10 +72,34 @@ function validate(pass, passwithhash, callback) {
         callback(null, passwithhash == newhash);
 }
 
+function update(newdata, callback) {
+        connection(function(err, conn) {
+                if(err) {
+                        console.log("[LOGERR] %s:%s", err.name, err.msg);
+                        return callback(err);
+                }
+                
+                r.table("mainaccounts").filter({user: newdata.user}).limit(1).update(newdata).run(conn, function(err, data) {
+                                if(err) {
+                                        console.log("[LOGERR] %s:%s", err.name, err.msg);
+                                        callback(err.msg);
+                                }
+                                else if(data.replaced == 1) {
+                                        callback(null, newdata);
+                                }
+                                else {
+                                        callback(false);
+                                }
+                                release(conn);
+                        }
+                )
+        });
+}
+
 if(typeof dbconf.pool == 'object') {
         var g = require('generic-pool'),
             pool = g.Pool({
-                    name: 'rethinkdb'),
+                    name: 'rethinkdb',
                     min: dbconf.pool.min || 5,
                     max: dbconf.pool.max || 100,
                     log: dbconf.pool.log || true,
@@ -86,7 +111,7 @@ if(typeof dbconf.pool == 'object') {
                                     port: dbconf.port
                             }, function(err,conn) {
                                     if(err) {
-                                            var msg = "Connection failed !");
+                                            var msg = "Connection failed !";
                                             console.log("[LOGERR] Couldn't connect to the rethinkdb pool");
                                             callback(new Error(msg));
                                     }
@@ -219,9 +244,8 @@ module.exports.accAdd = function(newdata, callback) {
                         return 
                 }
                 
-                r.table("mainaccounts").filter(function(doc) {
-                        return r.or(doc('user')).eq(newdata.user), doc('email').eq(newdata.email));
-                }).limit(1).run(conn, function(err, data) {
+                r.table("mainaccounts").filter(function(doc) { return r.or(doc('user').eq(newdata.user), doc('email').eq(newdata.email));})
+                .limit(1).run(conn, function(err, data) {
                         if(err) {
                                 console.log("[LOGERR] %s:%s", err.name, err.msg);
                         }
@@ -269,8 +293,39 @@ module.exports.accInfo = function(callback) {
         console.log("something");
 }
 
-module.exports.accUpdate = function(callback) {
-        console.log("something");
+module.exports.accUpdate = function(newdata, callback) {
+        if(newdata.pass === '') {
+                delete newdata.pass;
+                update(newdata, callback);
+        }
+        else {
+                saltandhash(newdata.pass, function(hash) {
+                        newdata.pass = hash;
+                        update(newdata, callback);
+                })
+        }
+}
+
+module.exports.accUpdatePwd = function(email, newpwd, callback) {
+        saltandhash(newpwd, function(hash) {
+                connection(function(err, conn) {
+                        if(err) {
+                                console.log("[LOGERR] %s:%s", err.name, err.msg);
+                                return callback(err);
+                        }
+                        
+                        r.table("mainaccounts").filter({email: email}).limit(1).update({pass: hash}).run(conn, function(err, res) {
+                                if(res && res.replaced === 1) {
+                                        callback(true);
+                                }
+                                else {
+                                        callback(false);
+                                }
+                                release(conn);
+                        }
+                );
+        });
+});
 }
 
 module.exports.accDelete = function(callback) {
