@@ -6,7 +6,7 @@
 module.exports.db = {
         host: process.env.RDB_HOST || 'localhost',
         port: process.env.RDB_PORT || 28015,
-        db: process.env.RDB_DB || 'ghost',
+        db: process.env.RDB_DB || 'gusac',
         pool: {
                 min: 5,
                 max: 100,
@@ -19,5 +19,5 @@ module.exports.db = {
 module.exports.emailconfig = {
         uname: "somename",
         pwd: "somepassword",
-        org: "www.gusaccarnival.org", 
+        org: "www.gusaccarnival.org",
 }

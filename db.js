@@ -78,7 +78,7 @@ function update(newdata, callback) {
                         console.log("[LOGERR] %s:%s", err.name, err.msg);
                         return callback(err);
                 }
-                
+
                 r.table("mainaccounts").filter({user: newdata.user}).limit(1).update(newdata).run(conn, function(err, data) {
                                 if(err) {
                                         console.log("[LOGERR] %s:%s", err.name, err.msg);
@@ -136,7 +136,7 @@ module.exports.alogin = function(user, pass, callback) {
                         console.log("[LOGERR] %s:%s", err.name, err.msg);
                         return callback(null);
                 }
-                
+
                 r.table("mainaccounts").filter({user: user}).run(conn, function(err, data) {
                         if(err) {
                                 console.log("[LOGERR] Couldnot login %s:%s", err.name, err.msg);
@@ -147,7 +147,7 @@ module.exports.alogin = function(user, pass, callback) {
                                 release(conn);
                                 return callback(null);
                         }
-                        
+
                         data.next(function(err, res) {
                                 if(err) {
                                         console.log("[OGERR] %s:%s", err.name, err.msg);
@@ -175,7 +175,7 @@ module.exports.login = function(user, pass, callback) {
                         callback(null);
                         return;
                 }
-                
+
                 r.table("mainaccounts").filter({user: user}).limit(1).run(conn, function(err, data) {
                         if(err) {
                                 console.log("[LOGERR] %s:%s", err.name, err.msg);
@@ -216,13 +216,13 @@ module.exports.getData = function(callback) {
                 if(err) {
                         return callback(err);
                 }
-                
+
                 r.table("mainaccounts").run(conn, function(err, data) {
                         if(err) {
                                 release(conn);
                                 return callback(err);
                         }
-                        
+
                         data.toArray(function(err, res) {
                                 if(err) {
                                         callback(err);
@@ -241,9 +241,9 @@ module.exports.accAdd = function(newdata, callback) {
                 if(err) {
                         console.log("[LOGERR] %s:%s", err.name, err.msg);
                         callback(err);
-                        return 
+                        return
                 }
-                
+
                 r.table("mainaccounts").filter(function(doc) { return r.or(doc('user').eq(newdata.user), doc('email').eq(newdata.email));})
                 .limit(1).run(conn, function(err, data) {
                         if(err) {
@@ -270,7 +270,7 @@ module.exports.accAdd = function(newdata, callback) {
                                         saltandhash(newdata.pass, function(hash) {
                                                 newdata.pass = hash;
                                                 newdata.date = moment().format('MMMM Do YYYY, h:mm:ss a');
-                                                
+
                                                 r.table("accounts").insert(newdata).run(conn, function(err, res) {
                                                         if(res && res.inserted == 1) {
                                                                 newdata['id'] = res['generatedkeys'][0];
@@ -289,8 +289,32 @@ module.exports.accAdd = function(newdata, callback) {
         });
 }
 
-module.exports.accInfo = function(callback) {
-        console.log("something");
+module.exports.accInfo = function(email, pwd, callback) {
+        connection(function(err, conn) {
+                if(err) {
+                        return callback(null);
+                }
+
+                r.table("mainaccounts").filter({email: email, pass: pwd}).limit(1).run(conn, function(err, data) {
+                        if(err) {
+                                console.log("[LOGERR] %s:%s", err.name, err.msg);
+                                callback(null);
+                                release(conn);
+                        }
+                        else {
+                                data.next(function(err, res) {
+                                        if(err) {
+                                                callback(err);
+                                        }
+                                        else {
+                                                callback('ok');
+                                        }
+                                        release(conn);
+                                });
+                        }
+                }
+        )
+        });
 }
 
 module.exports.accUpdate = function(newdata, callback) {
@@ -313,7 +337,7 @@ module.exports.accUpdatePwd = function(email, newpwd, callback) {
                                 console.log("[LOGERR] %s:%s", err.name, err.msg);
                                 return callback(err);
                         }
-                        
+
                         r.table("mainaccounts").filter({email: email}).limit(1).update({pass: hash}).run(conn, function(err, res) {
                                 if(res && res.replaced === 1) {
                                         callback(true);
@@ -328,8 +352,22 @@ module.exports.accUpdatePwd = function(email, newpwd, callback) {
 });
 }
 
-module.exports.accDelete = function(callback) {
-        console.log("something");
+module.exports.accDelete = function(id, callback) {
+        connection(function(err, conn) {
+                if(err) {
+                        return callback(err);
+                }
+
+                r.table("mainaccounts").get(id).delete().run(conn, function(err, res) {
+                        if(err || res.deleted !== 1) {
+                                callback(false);
+                        }
+                        else {
+                                callback(null, true);
+                        }
+                        release(conn);
+                });
+        });
 }
 
 
