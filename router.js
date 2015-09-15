@@ -6,11 +6,12 @@
 var http = require('http'),
     express = require('express'),
     fs = require('fs'),
+    db = require('./db'),
     bcrypt = require('bcrypt'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser');
 
-module.exports.app = function() {
+module.exports.app = function() {        
         var port = process.env.PORT || 8000;
         var app = express();
         var router = express.Router();
@@ -55,14 +56,23 @@ module.exports.app = function() {
         });
 
         router.post('/controller/register', function(req, res) {
-               var name = req.body.name,
-                   college = req.body.collegename,
-                   collegeid = req.body.collegeid,
-                   email = req.body.email,
-                   dept = req.body.dept,
-                   pwd = req.body.pass1,
-                   confpwd = req.body.pass2,
-                   phone = req.body.phone;
+               db.accAdd({
+                       name = req.body['name'],
+                       college = req.body['collegename'],
+                       collegeid = req.body['collegeid'],
+                       email = req.body['email'],
+                       dept = req.body['dept'],
+                       pwd = req.body['pass1'],
+                       confpwd = req.body['pass2'],
+                       phone = req.body['phone']
+               }, function(err) {
+                       if(err) {
+                               res.status(400).send(err);
+                       }
+                       else {
+                               res.status(200).send('it is done');
+                       }
+               });
         });
 
         router.get('/team', function(req, res) {
@@ -92,7 +102,7 @@ module.exports.app = function() {
                         }
                 });
         });
-
+        
         app.use('/', router);
 
         http.createServer(app).listen(port, function() {
