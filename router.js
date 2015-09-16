@@ -5,11 +5,20 @@
  */
 var http = require('http'),
     express = require('express'),
+    session = require('express-session'),
     fs = require('fs'),
-    db = require('./db'),
-    bcrypt = require('bcrypt'),
+    db = require('./scripts/db'),
+    flash = require('connect-flash'),
+    passport = require('passport'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser');
+
+function isLoggedin(req, res, next) {
+        if(req.isAuthenticated()) {
+                return next();
+        }
+        res.redirect('/');
+}
 
 module.exports.app = function() {        
         var port = process.env.PORT || 8000;
@@ -19,23 +28,29 @@ module.exports.app = function() {
 
         app.use(express.static('assets'));
         app.set('title', "GUSAC Carnival 4");
+        app.set('view engine', 'ejs');
+        app.use(session({
+                secret : 'gusac123!@#',
+                resave : true,
+                saveUninitialized : true
+        }));
         app.use(cookieParser());
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended: true}));
+        app.use(passport.initialize());
+        app.use(passport.session());
+        app.use(flash());
 
         router.get('/', function(req, res) {
-                var data = fs.readFileSync("views/index.html", "UTF-8");
-                res.send(data.toString());
+                res.render('index.ejs');
         });
 
         router.get('/about', function(req, res) {
-                var data = fs.readFileSync("views/about.html", "UTF-8");
-                res.send(data.toString());
+                res.render('about.ejs');
         });
 
         router.get('/contact', function(req, res) {
-                var data = fs.readFileSync("views/contact.html", "UTF-8");
-                res.send(data.toString());
+                res.render('contact.ejs');
         });
 
         router.post('/controller/contact', function(req, res) {
@@ -46,25 +61,29 @@ module.exports.app = function() {
         });
 
         router.get('/events', function(req, res) {
-                var data = fs.readFileSync("views/events.html", "UTF-8");
-                res.send(data.toString());
+                res.render('events.ejs');
+        });
+
+        router.get('/profile', isLoggedin, function(req, res) {
+                res.render('profile.ejs', {
+                        user: req.user
+                });
         });
 
         router.get('/register', function(req, res) {
-                var data = fs.readFileSync("views/register.html", "UTF-8");
-                res.send(data.toString());
+                res.render('register.ejs');
         });
 
         router.post('/controller/register', function(req, res) {
                db.accAdd({
-                       name = req.body['name'],
-                       college = req.body['collegename'],
-                       collegeid = req.body['collegeid'],
-                       email = req.body['email'],
-                       dept = req.body['dept'],
-                       pwd = req.body['pass1'],
-                       confpwd = req.body['pass2'],
-                       phone = req.body['phone']
+                       name : req.body['inputName'],
+                       user : req.body['inputEmail'],
+                       pass : req.body['inputPassword'],
+                       email : req.body['inputEmail'],
+                       phone : req.body['inputPhoneNumber'],
+                       state: req.body['stateName'],
+                       college : req.body['collegeName'],
+                       dept : req.body['deptName']
                }, function(err) {
                        if(err) {
                                res.status(400).send(err);
@@ -75,9 +94,13 @@ module.exports.app = function() {
                });
         });
 
+        router.get('/logout', function(req, res) {
+                req.logout();
+                res.redirect('/');
+        });
+
         router.get('/team', function(req, res) {
-                var data = fs.readFileSync("views/team.html", "UTF-8");
-                res.send(data.toString());
+                res.send('team.ejs');
         });
 
         router.get('/[0-9]', function(req, res) {
@@ -85,7 +108,7 @@ module.exports.app = function() {
         });
 
         router.get('*', function(req, res) {
-                var match = 'views/' + req.params[0] + '.html';
+                var match = 'views/' + req.params[0] + '.ejs';
                 fs.exists(match, function(present) {
                         if(present) {
                                 fs.readFile(match, function(err, data) {

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name = "author" content = "Akhil Pandey , Om Bhallamudi">
+    <meta name = "keywords" content = "GUSAC carnival 2015 gusac GITAM " >
+    <meta name = "description" content = "Official Website of GUSAC Carnival, part of GUSAC (GITAM University Science and Activity Center)." >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Carnival | Register </title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="img/fevicon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/bootswatch.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">GUSAC CARNIVAL</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse " id="navbar-main">
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" >About</a></li>
+                <li><a href="#" >Events</a></li>
+                <li><a href="#" >Workshops</a></li>
+                <li><a href="#" >Culturals</a></li>
+                <li><a href="#" >Film Festival</a></li>
+                <li><a href="#" >Litrary Fest</a></li>
+                <li><a href="lectures.html" >Guest Lectures</a></li>
+                <li><a href="#" >Sponsors</a></li>
+                <li class="active"><a href="register.html" >Register</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <form class="form-horizontal" method="POST" action="/controller/register">
+
+            <div class="form-group">
+                <label for="inputName" class="col-lg-2 control-label">Full Name</label>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="inputName" placeholder="Full Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="inputEmail" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-6">
+                    <input type="password" class="form-control" name="inputPassword" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPasswordAgain" class="col-lg-2 control-label">Retype Password</label>
+                <div class="col-lg-6">
+                    <input type="password" class="form-control" name="inputPasswordAgain" placeholder="Retype Password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPhoneNumber" class="col-lg-2 control-label">Phone Number</label>
+                <div class="col-lg-6">
+                    <input type="tel" class="form-control" name="inputPhoneNumber" placeholder="Phone Number" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="AddressArea" class="col-lg-2 control-label">Address</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" name="AddressArea" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Gender </label>
+                <div class="col-lg-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Gender" id="GenderMale" value="Male" required>
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" name="Gender" id="GenderFemale" value="Female" required>
+                            Female
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                    <label  class="col-lg-2 control-label top-padding-min">Date Of Birth</label>
+                    <div class="col-sm-3 top-padding-min">
+
+                        <select class="form-control" name="Month" id="month" form="">
+                            <option>January </option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 top-padding-min">
+                        <select class="form-control" id="day" name="day"  form="">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+
+                        </select>
+                    </div>
+                    <div class="col-sm-3 top-padding-min">
+                        <select class="form-control" id="year" name="year"  form="">
+                            <option>1980</option>
+                            <option>1981</option>
+                            <option>1982</option>
+                            <option>1983</option>
+                            <option>1984</option>
+                            <option>1985</option>
+                            <option>1986</option>
+                            <option>1987</option>
+                            <option>1988</option>
+                            <option>1989</option>
+                            <option>1990</option>
+                            <option>1991</option>
+                            <option>1992</option>
+                            <option>1993</option>
+                            <option>1994</option>
+                            <option>1995</option>
+                            <option>1996</option>
+                            <option>1997</option>
+                            <option>1998</option>
+                            <option>1999</option>
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                            <option>2003</option>
+                            <option>2004</option>
+                            <option>2005</option>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                        </select>
+                    </div>
+
+
+            </div>
+            <div class="form-group">
+                <label for="stateName" class="col-lg-2 control-label">State </label>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="stateName" placeholder="State" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="collegeName" class="col-lg-2 control-label">College Name </label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="collegeName" placeholder="College Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deptName" class="col-lg-2 control-label">Department</label>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="deptName" placeholder="Department" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gradYear" class="col-lg-2 control-label">Year</label>
+                <div class="col-lg-6">
+                    <select class="form-control" name="gradYear" id="gradYear" form="" required>
+                        <option>1st Year</option>
+                        <option>2nd Year</option>
+                        <option>3rd Year</option>
+                        <option>4th Year</option>
+                        <option>Post Graduate 1st </option>
+                        <option>Post Graduate 2nd </option>
+                        <option>Post Graduate 3rd </option>
+                        <option>Others</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default ">Cancel</button>
+                    <button type="submit" class="btn btn-primary ">Submit</button>
+                </div>
+            </div>
+
+    </form>
+</div>
+
+
+
+<script src="js/jquery-2.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootswatch.js"></script>
+</body>
+</html>
