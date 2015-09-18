@@ -20,7 +20,7 @@ function isLoggedin(req, res, next) {
         res.redirect('/');
 }
 
-module.exports.app = function() {        
+module.exports.app = function() {
         var port = process.env.PORT || 8000;
         var app = express();
         var router = express.Router();
@@ -100,7 +100,7 @@ module.exports.app = function() {
         });
 
         router.get('/team', function(req, res) {
-                res.send('team.ejs');
+                res.render('team.ejs');
         });
 
         router.get('/[0-9]', function(req, res) {
@@ -125,7 +125,7 @@ module.exports.app = function() {
                         }
                 });
         });
-        
+
         app.use('/', router);
 
         http.createServer(app).listen(port, function() {

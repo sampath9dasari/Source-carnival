@@ -4,6 +4,10 @@
     padding-top: 10px;
 }
 
+.no-margin{
+    margin: 0 !important;
+}
+
 .shade-line{
     margin: 15px 5px;
     height: 2px;
@@ -91,6 +95,45 @@ footer{
         padding: 10% 8% 5%;
 
     }
+}
+
+.panel-body .glyphicon-envelope {
+    padding-top: 8px;
+    padding-right: 10px;
+}
+.panel-body .glyphicon-phone {
+
+    padding-right: 10px;
+}
+/* ----------- CONTACT FORM ENDS ----------- */
+
+
+/* ----------- EVENT PAGE BEGINS ----------- */
+
+.event-name-header{
+    border-bottom: 1em solid #18bc9c;
+}
+.event-poster{
+    max-height: 400px;
+   background-size: cover;
+}
+
+/* ----------- EVENT PAGE ENDS ----------- */
+
+
+/* ----------- LITRARY PAGE CSS BEGINS ----------- */
+
+.litrary-event-image{
+    width:100%;
+   max-width: 420px;
+    max-height: 300px;
+}
+.jumbotron{
+    background-image: url("../images/literary/cover.jpg");
+}
+.jumbotron p,.jumbotron h1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.81);
 }
 
 .timeline {
@@ -293,21 +336,5 @@ footer{
     }
 }
 
-.panel-body .glyphicon-envelope {
-    padding-top: 8px;
-    padding-right: 10px;
-}
-.panel-body .glyphicon-phone {
 
-    padding-right: 10px;
-}
-/* ----------- CONTACT FORM ENDS ----------- */
-
-
-
-/* ----------- SOCIAL BOTTOM ----------- */
-
-
-
-
-/* ----------- SOCIAL BOTTOM ----------- */
+/* ----------- LITRARY PAGE CSS ENDS ----------- */
