@@ -192,10 +192,10 @@
 			font-size: 3em;
             margin: 0 0 0.8em;
 		}
-		
-		header.major p {		
-			font-size: 1.7em;		
-			margin-bottom: 0;		
+
+		header.major p {
+			font-size: 1.7em;
+			margin-bottom: 0;
 		}
 /* Form */
 
@@ -964,7 +964,7 @@
 /* Banner */
 
 	#banner {
-		background: url("images/overlay.png"), url("../img/unnamed.jpg");
+		background: url("images/overlay.png"), url("../img/01.jpg");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
