@@ -64,6 +64,103 @@ module.exports.app = function() {
                 res.render('events.ejs');
         });
 
+        router.get('/events/:name', function(req, res) {
+                var page = req.params.name;
+                if(page == "arqueria") {
+                    res.render('eventcontent', {
+                        title: "Arqueria",
+                        eventname: "Arqueria",
+                        imgname: "1.jpg",
+                        eventcontent: "Participants must prepare a bot (wired or wireless) which must be capable of moving on a metal rod and shooting an ordinary table tennis ball by aiming the bull's eye. Competition consists of 2 rounds.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: "",
+                        further: ""
+                    });
+                }
+                else if (page == "casestudy") {
+
+                }
+                else if (page == "magnogenesis") {
+
+                }
+                else if (page == "clashofbots") {
+
+                }
+                else if (page == "extremeadv") {
+
+                }
+                else if (page == "jury") {
+
+                }
+                else if (page == "killerquest") {
+
+                }
+                else if (page == "pharmascruto") {
+
+                }
+                else if (page == "60secs") {
+
+                }
+                else if (page == "cstrike") {
+
+                }
+                else if (page == "fifa") {
+
+                }
+                else if (page == "steeryouway") {
+
+                }
+                else if (page == "Jenga") {
+
+                }
+                else if (page == "roborun") {
+
+                }
+                else if (page == "civilstructures") {
+
+                }
+                else if (page == "wargames") {
+
+                }
+                else if (page == "enigma") {
+
+                }
+                else if (page == "magnetron") {
+
+                }
+                else if (page == "riptide") {
+
+                }
+                else if (page == "brainiac") {
+
+                }
+                else if (page == "treasurehunt") {
+
+                }
+                else if (page == "sciencequiz") {
+
+                }
+                else if (page == "digitalkab") {
+
+                }
+                else if (page == "waterrock") {
+
+                }
+                else if (page == "electron") {
+
+                }
+                else if (page == "paperprep") {
+
+                }
+                else if (page == "canvasideas") {
+
+                }
+        });
+
         router.get('/profile', isLoggedin, function(req, res) {
                 res.render('profile.ejs', {
                         user: req.user
