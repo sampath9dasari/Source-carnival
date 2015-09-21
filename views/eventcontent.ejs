@@ -26,7 +26,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="index.html" class="navbar-brand">GUSAC CARNIVAL 2015</a>
+            <a href="index.html" class="navbar-brand">GUSAC CARNIVAL</a>
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -50,65 +50,104 @@
         </div>
     </div>
 </div>
+
+<br>
+
 <header class="event-name-header">
     <h1>
         <%= eventname %>
     </h1>
 </header>
-<div class="container-fluid ">
-    <img class="img-responsive event-poster" src="img/events/<%=imgname%>" >
+
+<br>
+
+<div class="container">
+    <div class="col-md-6">
+        <img class="img-responsive event-poster" src="../img/events/<%=imgname%>" >
+    </div>
+
+    <div class="col-md-6">
+        <section class="cd-section">
+            <p>
+                <%= eventcontent %>
+            </p>
+
+            <div class="cd-modal-action">
+                <a href="#0" class="btn" data-type="modal-trigger">More Details</a>
+                <span class="cd-modal-bg"></span>
+            </div>
+
+            <div class="cd-modal">
+                <div class="cd-modal-content">
+                    <p class="text-success">
+                        <%= tit1 %>
+                    </p>
+
+                    <p class="general">
+                        <%= description %>
+                    </p>
+
+                    <p class="text-info">
+                        <%= tit2 %>
+                    </p>
+
+                    <p class="general">
+                        <%= probstmt %>
+                    </p>
+
+                    <p class="text-danger">
+                        <%= tit3 %>
+                    </p>
+
+                    <p class="general">
+                        <%= rules %>
+                    </p>
+
+                    <p class="text-muted">
+                        <%= tit4 %>
+                    </p>
+
+                    <p class="general">
+                        <%= judging %>
+                    </p>
+
+                    <p class="text-info">
+                        <%= tit5 %>
+                    </p>
+
+                    <p class="general">
+                        <%= rounds %>
+                    </p>
+
+                    <p class="text-warning">
+                        <%= tit6 %>
+                    </p>
+
+                    <p class="general">
+                        <%= specifications %>
+                    </p>
+
+                    <p class="text-success">
+                        <%= tit7 %>
+                    </p>
+
+                    <p class="general">
+                        <%= contact %>
+                    </p>
+
+                    <p>
+                        <%= further %>
+                    </p>
+                </div>
+            </div>
+
+            <a href="#0" class="fa fa-close cd-modal-close">Close</a>
+        </section>
+    </div>
 </div>
 
-<section class="cd-section">
-    <p>
-        <%= eventcontent %>
-    </p>
-
-    <div class="cd-modal-action">
-        <a href="#0" class="btn" data-type="modal-trigger">More Details</a>
-        <span class="cd-modal-bg"></span>
-    </div>
-
-    <div class="cd-modal">
-        <div class="cd-modal-content">
-            <h3>Description</h3>
-            <p>
-                <%= description %>
-            </p>
-
-            <h3>Problem Statement</h3>
-            <p>
-                <%= probstmt %>
-            </p>
-
-            <h3>Rules and Regulations</h3>
-            <p>
-                <%= rules %>
-            </p>
-
-            <h3>Rounds and Judging Criteria</h3>
-            <p>
-                <%= rounds %>
-            </p>
-
-            <h3>Specifications and Other Safety Information</h3>
-            <p>
-                <%= specifications %>
-            </p>
-
-            <h3>Event Co-ordinators</h3>
-            <p>
-                <%= contact %>
-            </p>
-
-            <p>
-                <%= further %>
-            </p>
-        </div>
-    </div>
-
-    <a href="#0" class="cd-modal-close">Close</a>
-</section>
+<br>
+<br>
 
 <footer class="no-margin">
     <div class="container-fluid footer-design">
@@ -123,9 +162,9 @@
 </footer>
 
 
+<script src="../js/jquery-2.1.3.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/bootswatch.js"></script>
-<script src="../js/jquery-2.1.3.js"></script>
 <script src="../js/velocity.min.js"></script>
 <script src="../js/main_events.js"></script>
 </body>

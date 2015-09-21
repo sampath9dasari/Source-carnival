@@ -110,9 +110,6 @@ footer{
 
 /* ----------- EVENT PAGE BEGINS ----------- */
 
-.event-name-header{
-    border-bottom: 1em solid #18bc9c;
-}
 .event-poster{
     max-height: 400px;
    background-size: cover;
