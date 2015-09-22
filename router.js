@@ -401,12 +401,12 @@ module.exports.app = function() {
                         tit6: "Specifications and Further Information",
                         tit7: "Event Co-ordinators",
                         eventcontent: "The participants need to construct an arch with supports using bricks and sand only instead of using concrete and steel. The arch constructed should be capable of bearing the weights that will be placed on it. A team of 3 participants will be allowed to peform the event.",
-                        description: "",
-                        probstmt: "",
-                        rules: "",
-                        judging: "",
-                        rounds: "",
-                        specifications: "",
+                        description: "Civil structure, the word itself describes that a structure is to be constructed. It is a technical event and the participants will be given an arch shaped iron stand over which they have to construct an arch with supports at both its ends using bricks and sand. There will be a time barrier of 20 minutes. After which, the strength of the arch will be tested using weights. The arch bearing the maximum weight wins the event.",
+                        probstmt: "The participants need to construct an arch with supports using bricks and sand. The arch constructed should be capable of bearing the weights that will be placed on it.",
+                        rules: " A maximum of 3 members are allowed per team. Cement or any binding materials can't be used. Teams will not be allowed to use broken brick, only full size brick can be used. If any structure does not stand on its supports then it will be out of the race.",
+                        judging: "The team which constructs the arch that bears the maximum load put on it will be considered as winner.",
+                        rounds: "The participating team needs to construct an arch using bricks and sand with supports at both ends. After constructing the arch, the iron stand is removed slowly such that the constructed arch is balanced on its supports. Weights are placed on the arch one after the other. The arch should be capable of bearing those weights.",
+                        specifications: "Time limits: Making brick arch bridge on support arch - 20 minutes, Removing the support arch - 5 minutes",
                         contact: "",
                         further: ""
                     });
@@ -424,13 +424,13 @@ module.exports.app = function() {
                         tit6: "Specifications and Further Information",
                         tit7: "Event Co-ordinators",
                         eventcontent: "Did you watch die hard 4, wargames or the matrix because you couldn't get enough? Does mr. robot keep you awake all night? Do you look in the source code for clues? This event is for you! All you have to do is play the games to win.",
-                        description: "",
-                        probstmt: "",
-                        rules: "",
-                        judging: "",
-                        rounds: "",
-                        specifications: "",
-                        contact: "",
+                        description: "Did you watch die hard 4, wargames or the matrix because you couldn't get enough? Does mr. robot keep you awake all night? Do you look in the source code for clues? This event is for you! All you have to do is play the games to win.",
+                        probstmt: "Each level gives you the password to the next. Play! Faster you complete, more points you get. Each level is different, fun and challenging.",
+                        rules: "Lone rangers or Duets only. BYOD for the 2nd round if you want to. Few challenges may require you to do it. Get a laptop with a live cd of kali linux and spare yourselves the pain of installing tools during the event (time is precious, waste it wisely). Additional rules will be informed once you reach round 2.",
+                        judging: "Please refer the rounds again, in order to understand the Judging criteria",
+                        rounds: "Round 1: Pen and paper round to advance to round 2. Every hacker has to know his lore, his origins and his commands! Easy questions carry lesser marks than hard questions. Round 2: The second round is nothing like the first. Let the games begin. You compete against others who have been deemed worthy of this round. One with the highest points wins!",
+                        specifications: "No specifications as required, but will be changed at the time of the event",
+                        contact: "Om Bhallamudi (+91-9573663478, om.bhallamudi@gmail.com)",
                         further: ""
                     });
                 }
@@ -447,13 +447,13 @@ module.exports.app = function() {
                         tit6: "Specifications and Further Information",
                         tit7: "Event Co-ordinators",
                         eventcontent: "An Enigma machine was a series of electro-mechanical rotor cipher machines developed and used in the early to early-mid twentieth century for commercial and military usage.",
-                        description: "",
-                        probstmt: "",
-                        rules: "",
-                        judging: "",
-                        rounds: "",
-                        specifications: "",
-                        contact: "",
+                        description: "An Enigma machine was a series of electro-mechanical rotor cipher machines developed and used in the early to early-mid twentieth century for commercial and military usage.",
+                        probstmt: "The enemy forces of thanos have trivial enigma machines that must be broken. You comorade, are one of the candidates selected to help mr.stark do it.",
+                        rules: "Lone rangers only. BYOD for the 2nd round if you want to. Not necessary but we at shield understand some people like programming on their own laptops Additional rules will be informed once you reach round 2.",
+                        judging: "Please refer the rounds again, in order to understand the Judging criteria",
+                        rounds: "Round 1: Pen and paper round to advance to round 2. Yes, I have selected you, but you have to pass the test set by JARVIS.Round 2: Programming! Mr. Stark is busy with the civil war. Can you write some code for him?",
+                        specifications: "No specifications as required, but will be changed at the time of the event",
+                        contact: "Om Bhallamudi (+91-9573663478, om.bhallamudi@gmail.com)",
                         further: ""
                     });
                 }
@@ -469,15 +469,15 @@ module.exports.app = function() {
                         tit5: "Rounds and Gameplay",
                         tit6: "Specifications and Further Information",
                         tit7: "Event Co-ordinators",
-                        eventcontent: "Magnetron is based on the principle of electromagnetism. A rover(bot) is attached with an electromagnet to its arm which should be capable of displacing any kind of small ferric substances (pins, nails, screws) from the given place to the destination with the help of magnetising and demagnetising the electromagnet as per the requirement.",
-                        description: "",
-                        probstmt: "",
-                        rules: "",
-                        judging: "",
-                        rounds: "",
-                        specifications: "",
-                        contact: "",
-                        further: ""
+                        eventcontent: "You may be familiar with permanent magnets—the kind that hang on a refrigerator. But did you know that other magnets, called electromagnets, can be turned on and off?",
+                        description: "Magnetron is based on the principle of electromagnetism. A rover (bot) is attached with an electromagnet to its arm which should be capable of displacing any kind of small ferric substances (pins, nails, screws) from the given place to the destination with the help of magnetising and demagnetising the electromagnet as per the requirement.",
+                        probstmt: "In this event the participants should make a rover which consists of an arm (which has a electromagnet) that should be capable of lifting small metallic pieces like nails and pins which are placed on ground.",
+                        rules: "A team should consists of 2- 4 participants.",
+                        judging: "1) In the first round basic functioning of the participant's rover will be tested i.e. whether it is capable of lifting metallic pieces placed randomly placed on ground, and drop them at specified location after carrying through the given path. 2) In the second round time taken by the rover to complete the task is considered. 3) In the third round all the selected teams will participate at a time. Participants who collects the most is considered as the   winners, score will be awarded accordingly.",
+                        rounds: "Please contact the event Co-ordinators",
+                        specifications: "1) Rover should contain an electromagnet to its arm. 2) Arm of the rover should be movable. 3)Rover designed must be capable of lifting the metallic pieces (nails, screws, pins) which are placed on ground as well as carry them and drop them in the specified location. 4) Rover max dimensions: 30x30cms including tyres.",
+                        contact: "G. Tharun Kumar (9618410510, tharunkumarguntupu@gmail.com), L. Mahesh (9866209025, maheshlekkala043@gmail.com)",
+                        further: "* Reference link: https://youtu.be/HQdLFEiVeCA, ** Video in the link contains just an electromagnetic arm while participants must design an entire rover"
                     });
                 }
                 else if (page == "riptide") {
@@ -493,13 +493,13 @@ module.exports.app = function() {
                         tit6: "Specifications and Further Information",
                         tit7: "Event Co-ordinators",
                         eventcontent: "The participants are given a particular task in each round. They are to carry out the task inthe most simplest, yet efficient manner. The difficulty level of the task increases as they advance into the next rounds.",
-                        description: "",
-                        probstmt: "",
-                        rules: "",
-                        judging: "",
-                        rounds: "",
-                        specifications: "",
-                        contact: "",
+                        description: "This is an innovative idea to modernise the conventional way of transportation i.e boats. This event involves all the basic mechanisms and operations of motors and analysing the racing path in the water medium. The accuracy in controlling the boat and efficiency in decoding the path to reach the fastest unfolds the key to win. The profound nature of beating others down in actions brings up the true spirit of this completion.",
+                        probstmt: "The participants are given a particular task in each round. They are to carry out the task in the most simplest, yet efficient manner. The difficulty level of the task increases as they advance into the next rounds.",
+                        rules: "The teams should contain a maximum of FOUR participants and a minimum of THREE. Only one member of the team is allowed to control the boat. The teams will be given ONE chance as trail before the completion starts. The teams should design their boats based on the dimensions of the arena for different rounds specified. The organisers will not be responsible of any misconceptions. Any changes regarding the event will be informed to all the teams will in advance.",
+                        judging: "Carefully read the rules again in order to be clear",
+                        rounds: "ROUND 1 :ELIMINATION ROUND, TASK : To complete a lap in minimum time. DESCRIPTION : This is an elimination round where the boat must must complete the lap in minimum amount of time. The boat will be be placed in the start zone. JUDGMENT CRITERIA : Judgment will be based on the time taken by the participant to complete the lap. The teams with best time will be taken into consideration and will be qualified into next round. NOTE : The filtering depends on the number of participants registered in this event. ROUND 2 ,TASK : To project the ball into the scale(slot) with maximum point. DESCRIPTION : To place the ball from ground into the water where the scales with different points  is placed. The ball will be tied to your boat by means of a hook and thread. You can move the boat in any direction so that it falls into the scale holding maximum point. You will be given three chances and points acquired in each chance will be summed up. NOTE: The means of fitting the hook to the boat should be taken care by the participant. The thread will be provided by us. JUDGMENT CRITERIA :  It will be based on the points acquired by the team in three attempts. Top four teams with maximum points will advance into the round 3 i.e., the FINAL ROUND. ROUND 3, FINAL ROUND, TASK : In this event two teams will have to compete each other. PROBLEM STATEMENT: A set of balls of two different colors will be placed randomly in the water. The competing will teams have to place the balls of their choice into their respective goal posts provided at the end of the arena. HINT: The board should be fitted with an arm (like a snow plow) which pushes the ball forward. (You can also use any other suitable mechanism which fulfils the aim of the task.) JUDGEMENT CRITERIA: The team which manages to place maximum number of balls into the post in the given time frame will be declared as winner of the event, followed by the runner-ups. NOTE:The arena dimensions will be same for all the three rounds.",
+                        specifications: "The width of the boat should not exceed 20cm and the length can be upto 30cm. NOTE: It is advised to make the boat precise and apt to the rounds.",
+                        contact: "Akash Benny (email :akashbenny161@gmail.com ; mob: 8121713148), Bhargav Vamsi (email : pbv.easwar@gmail.com    ; mob: 8885690718), Eswar sai (email: eswarsaib96@gmail.com    ; mob:8790756499)",
                         further: ""
                     });
                 }
