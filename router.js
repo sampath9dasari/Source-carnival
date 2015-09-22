@@ -171,14 +171,14 @@ module.exports.app = function() {
                         tit6: "Specifications and Further Information",
                         tit7: "Event Co-ordinators",
                         eventcontent: "Build a bot that is capable of traversing a grid and passing through different stages.The bot has to traverse a grid and should be able to pass through different stages placed randomly.",
-                        description: "",
-                        probstmt: "",
-                        rules: "",
-                        judging: "",
-                        rounds: "",
-                        specifications: "",
-                        contact: "",
-                        further: ""
+                        description: "The bot has to traverse a grid and should be able to pass through different stages placed randomly.",
+                        probstmt: "Build a bot that is capable of traversing a grid and passing through different stages.",
+                        rules: " A maximum number of participants allowed per team: 4 people. All arena dimensions have a tolerance of 10%. Teams qualifying the first round will go into the second round. Teams cannot touch their bots during the course of the run, unless timeout is taken. LEGO kits or its spare parts or pre-made mechanical parts are not allowed. The team members can be from different institutes or colleges. Each team should have unique participants i.e. no two teams can have common participants.The decision of the Team Extreme Adventures will be final.",
+                        judging: "POSITIVES: Initial base score for Round 1 and Round 2 : 1200 points, For each correctly passed stage : +100, For every difficulty path choosen :+150. NEGATIVES: For  each time the bot is arranged manually : -20, For every time the bot is dropped down: -50, Restart : -80 points",
+                        rounds: "ROUND 1- This round will be a mixture of different stages. For eg. Sand,water, hurdles, inclined paths,etc. In this round the judging criteria will be mainly based on the completion of the task and then on the time taken to complete. ROUND 2- The task and arena of the second round will be disclosed at the time of the event. No extra mechanisms will be required on the part of the bot.",
+                        specifications: " The bot must fit in a box of 25cm X 20cm with a tolerance of 10% in the dimensions of bot. No part/mechanism of/on the bot should exceed the given dimensions before the commencement of the event. However the dimensions can change during the course of the run. The bots should not harm the event arena in any way. If it does so, a penalty will be imposed on the team. Bot can be either wired or wireless. Power supply for the bot will not be provided.",
+                        contact: " B.MUKESH CHOWDARY- (9441347770, e-mail id: mukesh.boginani94@gmail.com, Fb id: mukesh944),  V. SAI YESHWANTH- (8374474447, e-mail id: 95yeshu@gmail.com, Fb id: yeshwanthsaivankayala)",
+                        further: "VIDEO LINK: https://www.youtube.com/watch?v=zXp4l16MWPY"
                     });
                 }
                 else if (page == "jury") {
