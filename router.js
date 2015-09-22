@@ -64,6 +64,355 @@ module.exports.app = function() {
                 res.render('events.ejs');
         });
 
+        router.get('/literary/:name', function(req, res) {
+                var page = req.params.name;
+                if (page == "got") {
+                    res.render('litcontent', {
+                        title: "GOT | Carnival",
+                        eventname: "Game of Thrones",
+                        imgname: "img1.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "Men and women of the Seven Kingdoms! Come, join us as we take you to Westeros. Join your favorite house and journey through King's Landing to the mighty North. Join the Night's Watch or serve the Khaleesi. Sharpen your swords because Winter is coming and this time it's bringing something with it.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "hp") {
+                    res.render('litcontent', {
+                        title: "Harry Potter | Carnival",
+                        eventname: "Harry Potter",
+                        imgname: "img2.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "LUMOS! It's been 8 years since the last book was published and 4 years since the last movie was released... Yet the magic of Harry Potter still lives within us. Are you a true Potterhead? If yes, then throw your name in the Goblet Of Fire and emerge as a Champion! Participate in an array of events never witnessed before and relive those magical and nostalgic moments.NOX!",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "th") {
+                    res.render('litcontent', {
+                        title: "Treasure Hunt | Carnival",
+                        eventname: "Treasure Hunt",
+                        imgname: "img3.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "Indiana! The Secret Service needs your assistance immediately! The Nazi's have found the first clue about the possible location of the secret Mayan treasure. But we need to get there before them! Fortunately, we have the first clue with us. Your mission, should you choose to accept it, will involve finding the Mayan treasure before the Nazi forces can.Good luck, my friend.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "shdw") {
+                    res.render('litcontent', {
+                        title: "SH & DW | Carnival",
+                        eventname: "Sherlock and Dr Watson",
+                        imgname: "img4.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "There has been a murder!! We require your assistance immediately. The details of the murder will be given to you at the crime scene by our police personnel. We need your deduction skills now, more than ever.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "rg") {
+                    res.render('litcontent', {
+                        title: "RG | Carnival",
+                        eventname: "Rage Builder",
+                        imgname: "img5.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "You love comics?  It’s the love that’s going to help you to write one! A short  comic using a growing set of pre-made cartoon faces, or rage faces, which usually express rage or some other simple emotion or activity, will be given and the participants need to write the comic strip for the comic in the given space.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "pen") {
+                    res.render('litcontent', {
+                        title: "Pen | Carnival",
+                        eventname: "Pen is mightier than Sword",
+                        imgname: "img6.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "The pen is mightier than the sword, they say. If you agree to this then showcase your talent by a piece of writing giving your views about the topic.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "ss") {
+                    res.render('litcontent', {
+                        title: "Short Stories | Carnival",
+                        eventname: "Short Stories",
+                        imgname: "img7.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "All of us have an inborn talent of making stories; it’s time to showcase it. The starting and ending is given by us and you chose to plot the story with cartoon characters and writing it in the most funny and innovative way possible.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "adv") {
+                    res.render('litcontent', {
+                        title: "Advertisement | Carnival",
+                        eventname: "Advertisement",
+                        imgname: "img8.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "An event to display your acting skills by making a video of about two minutes for our title sponsors ‘Ask Vizag’.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "hotseat") {
+                    res.render('litcontent', {
+                        title: "Hot Seat | Carnival",
+                        eventname: "Hot Seat",
+                        imgname: "img9.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "Hot seat focuses on a person's compatibility with his/her friend to guess the required word with the help of verbal clues. Also guess words with the help of pictorial aid.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "word") {
+                    res.render('litcontent', {
+                        title: "Word Play | Carnival",
+                        eventname: "Word Play",
+                        imgname: "img10.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "This is an event that focuses on your ability to decipher jumbled letters and sentences and form a paragraph. The event also focuses the command you have on spellings.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "speak") {
+                    res.render('litcontent', {
+                        title: "Speak Your Best | Carnival",
+                        eventname: "Speak Your Best",
+                        imgname: "img11.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "Come out of your comfort zone and raise your voice! Use this platform to excel in the art of Organized Arguing - DEBATE! How would you persuade others that your side is correct? What type of logical, emotional and ethical tactics would you play? Elocution! The true art of delivering a speech! All of us blab around casually and incoherently.. But can you come up with a strategy for a topic on the spot! Can you gather your ideas within the stipulated time? Is your thought process up to the challenge.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "anime") {
+                    res.render('litcontent', {
+                        title: "Anime Event | Carnival",
+                        eventname: "Anime Event",
+                        imgname: "img12.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "BAKA YARU KONA YARU!! All you anime freaks and geeks out there!, we need your power levels to be “OVER 9000!!!” This event is specially for you! Get your Poke-balls ready! because you  gotta catch em’ all!” It will be an event about your favorite anime shows. It’s time to show the world that you’ll be the best pirate king ever in the world! Recommended pre-requistes: ninjutsu , taijutsu , genjutsu , and loads of anime knowledge! (NO mind reading skills with huge ninja robots and Geass allowed!) PS: Shinigami’s are also allowed and if you have a shinigami friend apples would be sold separately! ;)",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "ent") {
+                    res.render('litcontent', {
+                        title: "Entertainment Quiz | Carnival",
+                        eventname: "Entertainment Quiz",
+                        imgname: "img13.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "How well do you know your favorite superstars? Think you know it all about your favorite Books, TV shows and movies? Then test your knowledge and win prizes",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "bow") {
+                    res.render('litcontent', {
+                        title: "Best out of Waste | Carnival",
+                        eventname: "Best out of Waste",
+                        imgname: "img14.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "The planet is in trouble! We humans produce SO much of waste every day. The need of the hour is to Reduce, Reuse and Recycle.  If you are creative enough to create something beautiful from things that have been discarded, then this event is for you",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+                else if(page == "artatt") {
+                    res.render('litcontent', {
+                        title: "Art Attack | Carnival",
+                        eventname: "Art Attack",
+                        imgname: "img15.jpg",
+                        tit1: "Description",
+                        tit2: "Problem Statement",
+                        tit3: "Rules and Regulations",
+                        tit4: "Judging Criteria",
+                        tit5: "Rounds and Gameplay",
+                        tit6: "Specifications and Further Information",
+                        tit7: "Event Co-ordinators",
+                        eventcontent: "For all the artists out there, this event is for you. Bring out the colors and paint the town red.",
+                        description: "",
+                        probstmt: "",
+                        rules: "",
+                        judging: "",
+                        rounds: "",
+                        specifications: "",
+                        contact: " ",
+                        further: ""
+                    });
+                }
+        });
+
         router.get('/events/:name', function(req, res) {
                 var page = req.params.name;
                 if(page == "arqueria") {
