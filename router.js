@@ -1059,6 +1059,24 @@ module.exports.app = function() {
                        });
         });
 
+        router.post('/controller/workshopregister', function(req, res) {
+                      var name = req.body['inputName'],
+                       user = req.body['inputEmail'],
+                       workshopname = req.body['workshopname'],
+                       email = req.body['inputEmail'],
+                       phone = req.body['inputPhoneNumber'],
+                       state = req.body['stateName'],
+                       college = req.body['collegeName'],
+                       dept = req.body['deptName']
+
+                       res.render('responsework', {
+                            regname : name,
+                            regemail : email,
+                            regworkshop : workshopname,
+                            regphone : phone
+                       });
+        });
+
         router.get('/team', function(req, res) {
                 res.render('team.ejs');
         });
