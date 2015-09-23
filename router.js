@@ -1043,23 +1043,20 @@ module.exports.app = function() {
         });
 
         router.post('/controller/register', function(req, res) {
-               db.accAdd({
-                       name : req.body['inputName'],
-                       user : req.body['inputEmail'],
-                       pass : req.body['inputPassword'],
-                       email : req.body['inputEmail'],
-                       phone : req.body['inputPhoneNumber'],
-                       state: req.body['stateName'],
-                       college : req.body['collegeName'],
-                       dept : req.body['deptName']
-               }, function(err) {
-                       if(err) {
-                               res.status(400).send(err);
-                       }
-                       else {
-                               res.status(200).send('it is done');
-                       }
-               });
+                      var name = req.body['inputName'],
+                       user = req.body['inputEmail'],
+                       pass = req.body['inputPassword'],
+                       email = req.body['inputEmail'],
+                       phone = req.body['inputPhoneNumber'],
+                       state = req.body['stateName'],
+                       college = req.body['collegeName'],
+                       dept = req.body['deptName']
+
+                       res.render('response', {
+                            regname : name,
+                            regemail : email,
+                            regphone : phone
+                       });
         });
 
         router.get('/team', function(req, res) {
