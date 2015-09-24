@@ -7,7 +7,7 @@ var http = require('http'),
     express = require('express'),
     session = require('express-session'),
     fs = require('fs'),
-    db = require('./scripts/db'),
+    mysql = require('mysql'),
     flash = require('connect-flash'),
     passport = require('passport'),
     bodyParser = require('body-parser'),
@@ -1032,7 +1032,7 @@ module.exports.app = function() {
                         judging: " The durability of the product. How much it meets the brief. Usability/ workability. Description of the product. Ability of the team to be able to explain the product in detail. Creativity",
                         rounds: "Round 1 : Participants will be given the brief and then an hour's time to make an abstract with schematic diagrams, sketches, flow charts etc. The results will be checked by the volunteers. Only a selected few will move to the next round. Round 2: The participants will be asked to make a poster for their respective designs. Then the participants will have to present their product in front of a recognized jury.",
                         specifications: "No Specifications as such are required",
-                        contact: "Pragya (8142622506, pragyaverma15@gmail.com), Sruthi (9032838388, raghavansruthi@gmail.com)",
+                        contact: "Pragya (8142622506, pragyaverma15@gmail.com), Upama Sen (8886373676, senupama@gmail.com)",
                         further: ""
                     });
                 }
@@ -1075,6 +1075,7 @@ module.exports.app = function() {
                             regworkshop : workshopname,
                             regphone : phone
                        });
+
         });
 
         router.get('/team', function(req, res) {
