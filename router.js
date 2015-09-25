@@ -8,17 +8,9 @@ var http = require('http'),
     session = require('express-session'),
     fs = require('fs'),
     mysql = require('mysql'),
-    flash = require('connect-flash'),
-    passport = require('passport'),
+    em = require('./emailserver'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser');
-
-function isLoggedin(req, res, next) {
-        if(req.isAuthenticated()) {
-                return next();
-        }
-        res.redirect('/');
-}
 
 module.exports.app = function() {
         var port = process.env.PORT || 8000;
@@ -37,9 +29,6 @@ module.exports.app = function() {
         app.use(cookieParser());
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended: true}));
-        app.use(passport.initialize());
-        app.use(passport.session());
-        app.use(flash());
 
         router.get('/', function(req, res) {
                 res.render('index.ejs');
@@ -54,10 +43,23 @@ module.exports.app = function() {
         });
 
         router.post('/controller/contact', function(req, res) {
-                var name = req.body.name,
-                    phone = req.body.phone,
-                    email = req.body.email,
-                    query = req.body.query;
+                var name  = req.body['inputName'],
+                    email = req.body['inputEmail'],
+                    phone = req.body['inputPhoneNumber'],
+                    inputtext = req.body['inputText'];
+
+                var data = {
+                    from : email,
+                    query : inputtext
+                };
+
+                em.contact(data);
+
+                res.render('responsecontact', {
+                            cname : name,
+                            cmail : email,
+                            cphone : phone
+                       });
         });
 
         router.get('/events', function(req, res) {
@@ -1052,11 +1054,18 @@ module.exports.app = function() {
                        college = req.body['collegeName'],
                        dept = req.body['deptName']
 
+                       var data = {
+                            to : email,
+                            link : "https://in.explara.com/e/gusaccarnival2015/checkout"
+                       }
+
                        res.render('response', {
                             regname : name,
                             regemail : email,
                             regphone : phone
                        });
+
+                       em.registration(data);
         });
 
         router.post('/controller/workshopregister', function(req, res) {
@@ -1075,6 +1084,8 @@ module.exports.app = function() {
                             regworkshop : workshopname,
                             regphone : phone
                        });
+
+                       em.registration(data);
 
         });
 

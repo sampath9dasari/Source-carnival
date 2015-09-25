@@ -4,15 +4,16 @@
  * The MIT License
  */
 
-var c = require('./config').emailconfig;
-var s = require("sendgrid")(c.uname, c.pwd:)
+var c = require('./scripts/config').emailconfig;
+var f = require('fs')
+var s = require('sendgrid')(c.uname, c.pwd)
 
-module.exports.activateAccount = function(opt){
+module.exports.registration = function(opt){
         s.send({
                 to: opt.to,
                 from: "admin@gusac.org",
                 subject: "Registered | GUSAC CARNIVAL",
-                text: "Thank you for registering to GUSAC Carnival 2015, Please click on the link" + opt.link
+                text: "Thank you for registering to GUSAC Carnival 2015, You have completed the process of Registration. After some time you would receive the ticket as an attachment. So Please be patient. NOTE (IGNORE IF YOU HAVE MADE A PAYMENT): If you didnot complete the payment and have only been registered please click on the link and complete the payment, " + opt.link
         }, function(err, json) {
                 if(err) {
                         console.error(err);
@@ -23,12 +24,31 @@ module.exports.activateAccount = function(opt){
         });
 }
 
-module.exports.resetAccount = function(opt){
+module.exports.ticketattach = function(opt){
+        f.readFile('/home/hector/code/Source-carnival/assets/misc/' + opt.pdf, function(err, data) {
         s.send({
                 to: opt.to,
                 from: "admin@gusac.org",
-                subject: "Account Reset | GUSAC Carnival",
-                text: "Your account has been requested for a reset, Please click on the link in order to reset the Account" + opt.link
+                subject: "Payment Completed | GUSAC Carnival",
+                text: "Thank you for completing the payment for the respective event of Gusac Carnival 2015. Below we are attaching the ticket of the early bird pass that which you have purchased download it and have a physical copy along with an electronic copy at the time of the event. Thank you and See you soon at the Carinval 2015.",
+                files : [{filename: opt.pdf , content: data}]
+        }, function(err, json) {
+                if(err) {
+                        console.error(err);
+                }
+                else {
+                        console.log(json);
+                }
+        });
+        });
+}
+
+module.exports.contact = function(opt){
+        s.send({
+                to: "iamakhil@gusac.org",
+                from: "admin@gusac.org",
+                subject: "Info | GUSAC Carnival",
+                text: "Mailed from " + opt.from  + " and the query is :=>" + opt.query
         }, function(err, json) {
                 if(err) {
                         console.error(err);
@@ -55,7 +75,7 @@ module.exports.resetPassword = function(opt){
         });
 }
 
-module.exports.deleteAccount = {
+module.exports.deleteAccount = function(opt){
 	s.send({
                 to: opt.to,
                 from: "admin@gusac.org",
