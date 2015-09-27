@@ -1040,6 +1040,10 @@ module.exports.app = function() {
                 }
         });
 
+        router.get('/ff', function(req, res) {
+                res.render('ff.ejs');
+        });
+
         router.get('/register', function(req, res) {
                 res.render('register.ejs');
         });
