@@ -1017,8 +1017,8 @@ module.exports.app = function() {
                 }
                 else if (page == "canvasideas") {
                     res.render('eventcontent', {
-                        title: "Canvas of Ideas | Carnival",
-                        eventname: "Canvas of Ideas",
+                        title: "Canvas Your Ideas | Carnival",
+                        eventname: "Canvas Your Ideas",
                         imgname: "27.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
@@ -1028,11 +1028,11 @@ module.exports.app = function() {
                         tit6: "Specifications and Further Information",
                         tit7: "Event Co-ordinators",
                         eventcontent: "Products are of various types some are helpful and some can be more helpful. The main aim of this event is to enable to participant to design a product to the given requirements. Be creative and think outside the box!",
-                        description: "The main aim of this event is to enable the participant to design a product for the given requirement. Be creative and think outside the box!",
-                        probstmt: "Participants will be given a briefing, according to which they will have to perform. The briefing will pertain to only products used in daily life. Participants will be asked to present their abstracts with schematic diagrams, sketches, flow charts etc. based on their design. After which the participants will be asked to present a POSTER for their designs (materials will not be provided). The participants will then be asked to present and explain their design in front of a recognized jury.",
-                        rules: "A team can consist of a maximum of three members. Each team will have a total of three hours to make the product. The product detail description should be given by every team. Gusac carnival registration forms are a must for every member of the team. The designed product cannot be a copy of a product already available. It can be similar but not the same. Detailed explanation of the product is a must for every team.",
-                        judging: " The durability of the product. How much it meets the brief. Usability/ workability. Description of the product. Ability of the team to be able to explain the product in detail. Creativity",
-                        rounds: "Round 1 : Participants will be given the brief and then an hour's time to make an abstract with schematic diagrams, sketches, flow charts etc. The results will be checked by the volunteers. Only a selected few will move to the next round. Round 2: The participants will be asked to make a poster for their respective designs. Then the participants will have to present their product in front of a recognized jury.",
+                        description: "Create your own posters to advertise for a given product/brand. Come and paint your ideas and steal the spotlight.",
+                        probstmt: "Design a poster  for endorsing a given product/brand. Make it Speak, as words speak louder than actions. Use your creative ideas to spontaneously  grab the attention of the mass. ",
+                        rules: "Each team can consist of a Maximum of 2 members. Duration: 2 hours per team, Size of Poster: A3, Manual work only is permissible.Draw, Sketch, Paint, Write… Get your own colours and stationery. Use of any medium of colors is allowed. Only Paper will be provided on spot.",
+                        judging: "On Creativity, On Being Different, On Simplicity, On Being Ethical, On being able to grab attention & endorse the product/brand.",
+                        rounds: "Round 1 : Product/Brand will be revealed on spot. Design a poster for endorsement of the product/brand. Create a quote/slogan for it.",
                         specifications: "No Specifications as such are required",
                         contact: "Pragya (8142622506, pragyaverma15@gmail.com), Upama Sen (8886373676, senupama@gmail.com)",
                         further: ""
