@@ -1093,10 +1093,6 @@ module.exports.app = function() {
 
         });
 
-        router.get('/team', function(req, res) {
-                res.render('team.ejs');
-        });
-
         router.get('/[0-9]', function(req, res) {
                 res.redirect(errorPage);
         });
