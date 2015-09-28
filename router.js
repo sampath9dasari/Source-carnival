@@ -421,7 +421,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Arqueria | Carnival",
                         eventname: "Arqueria",
-                        imgname: "alt.jpg",
+                        imgname: "01.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -444,7 +444,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Case Study | Carnival",
                         eventname: "Case Study",
-                        imgname: "2.jpg",
+                        imgname: "02.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -467,7 +467,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Magnogenesis | Carnival",
                         eventname: "Magnogenesis",
-                        imgname: "alt.jpg",
+                        imgname: "03.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -490,7 +490,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Clash Of Bots | Carnival",
                         eventname: "Clash Of Bots",
-                        imgname: "alt.jpg",
+                        imgname: "04.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -513,7 +513,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Extreme Adventures | Carnival",
                         eventname: "Extreme Adventures",
-                        imgname: "alt.jpg",
+                        imgname: "05.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -536,7 +536,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "You the Jury | Carnival",
                         eventname: "You the Jury",
-                        imgname: "6.jpg",
+                        imgname: "06.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -559,7 +559,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Killer Quest | Carnival",
                         eventname: "Killer Quest",
-                        imgname: "alt.jpg",
+                        imgname: "07.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -582,7 +582,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Pharmascruto | Carnival",
                         eventname: "Pharmascruto",
-                        imgname: "8.jpg",
+                        imgname: "08.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -605,7 +605,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "60 Seconds to Fame | Carnival",
                         eventname: "60 Seconds to Fame",
-                        imgname: "alt.jpg",
+                        imgname: "09.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -651,7 +651,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Fifa | Carnival",
                         eventname: "Fifa",
-                        imgname: "alt.jpg",
+                        imgname: "11.jpg",
                         tit1: "Description",
                         tit2: "What is it About",
                         tit3: "Rules and Regulations",
@@ -674,7 +674,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Steer Your Way | Carnival",
                         eventname: "Steer Your Way",
-                        imgname: "alt.jpg",
+                        imgname: "12.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -697,7 +697,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Jenga | Carnival",
                         eventname: "Jenga",
-                        imgname: "alt.jpg",
+                        imgname: "13.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -743,7 +743,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Civil Structures | Carnival",
                         eventname: "Civil Structures",
-                        imgname: "alt.jpg",
+                        imgname: "15.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -766,7 +766,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "War Games | Carnival",
                         eventname: "War Games",
-                        imgname: "alt.jpg",
+                        imgname: "16.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -789,7 +789,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Enigma | Carnival",
                         eventname: "Enigma",
-                        imgname: "alt.jpg",
+                        imgname: "17.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -812,7 +812,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Magnetron | Carnival",
                         eventname: "Magnetron",
-                        imgname: "alt.jpg",
+                        imgname: "18.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -881,7 +881,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Treasure Hunt | Carnival",
                         eventname: "Treasure Hunt",
-                        imgname: "alt.jpg",
+                        imgname: "21.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -902,9 +902,9 @@ module.exports.app = function() {
                 }
                 else if (page == "sciencequiz") {
                     res.render('eventcontent', {
-                        title: "Science Quiz | Carnival",
-                        eventname: "Science Quiz",
-                        imgname: "alt.jpg",
+                        title: "Bio-Inquisitive | Carnival",
+                        eventname: "Bio-Inquisitive",
+                        imgname: "22.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -925,9 +925,9 @@ module.exports.app = function() {
                 }
                 else if (page == "digitalkab") {
                     res.render('eventcontent', {
-                        title: "Digital Kabbadi | Carnival",
-                        eventname: "Digital Kabbadi",
-                        imgname: "alt.jpg",
+                        title: "Plywardz | Carnival",
+                        eventname: "Plywardz",
+                        imgname: "23.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -973,7 +973,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Electron | Carnival",
                         eventname: "Electron",
-                        imgname: "alt.jpg",
+                        imgname: "25.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -996,7 +996,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Paper Presentation | Carnival",
                         eventname: "Paper Presentation",
-                        imgname: "alt.jpg",
+                        imgname: "26.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
@@ -1019,7 +1019,7 @@ module.exports.app = function() {
                     res.render('eventcontent', {
                         title: "Canvas of Ideas | Carnival",
                         eventname: "Canvas of Ideas",
-                        imgname: "alt.jpg",
+                        imgname: "27.jpg",
                         tit1: "Description",
                         tit2: "Problem Statement",
                         tit3: "Rules and Regulations",
