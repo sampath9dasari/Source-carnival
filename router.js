@@ -1072,6 +1072,36 @@ module.exports.app = function() {
                        em.registration(data);
         });
 
+        router.post('/controller/cultregister', function(req, res) {
+                      var name = req.body['bandname'],
+                       email = req.body['bandemail'],
+                       contact = req.body['bandcontact'],
+                       mem1 = req.body['bandmem1'],
+                       mem2 = req.body['bandmem2'],
+                       mem3 = req.body['bandmem3'],
+                       mem4 = req.body['bandmem4'],
+                       mem5 = req.body['bandmem5'],
+                       str = ", ",
+                       fullinfo = name  + str + email + str + contact + str + mem1 + str + mem2 + str + mem3 + str + mem4 + str + mem5;
+
+                       var data = {
+                            to : email,
+                            query : fullinfo
+                       }
+
+                       var data1 = {
+                            to : email
+                       }
+
+                       res.render('responsecult', {
+                            regemail : email,
+                            regphone : contact
+                       });
+
+                       em.kalakrithireg(data1);
+                       em.kalakrithiinfo(data);
+        });
+
         router.post('/controller/workshopregister', function(req, res) {
                       var name = req.body['inputName'],
                        user = req.body['inputEmail'],

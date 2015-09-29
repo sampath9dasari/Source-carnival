@@ -59,6 +59,38 @@ module.exports.contact = function(opt){
         });
 }
 
+module.exports.kalakrithireg = function(opt){
+        s.send({
+                to: opt.to,
+                from: "teamkalakrithi@gusac.org",
+                subject: "Registered | GUSAC CARNIVAL",
+                text: "Thank you for registering Accoustica, Carnival 2015, You are required to bring INR 500 for registering the band on the day of the event. Please remember that this is only for the competition and NOT for the Carnival 2015. If intersted you may buy the pass at http://gusaccarnival.org."
+        }, function(err, json) {
+                if(err) {
+                        console.error(err);
+                }
+                else {
+                        console.log(json);
+                }
+        });
+}
+
+module.exports.kalakrithiinfo = function(opt){
+        s.send({
+                to: "teamkalakrithi@gmail.com",
+                from: "admin@gusac.org",
+                subject: "Registered | Music Club (Accoustica)",
+                text: opt.query
+        }, function(err, json) {
+                if(err) {
+                        console.error(err);
+                }
+                else {
+                        console.log(json);
+                }
+        });
+}
+
 module.exports.resetPassword = function(opt){
         s.send({
                 to: opt.to,
