@@ -1102,6 +1102,74 @@ module.exports.app = function() {
                        em.kalakrithiinfo(data);
         });
 
+        router.post('/controller/dramaregister', function(req, res) {
+                      var name = req.body['bandname'],
+                       email = req.body['bandemail'],
+                       contact = req.body['bandcontact'],
+                       inst = req.body['bandinst'],
+                       dd = req.body['dd'],
+                       mm = req.body['mm'],
+                       yy = req.body['yy'],
+                       str = ", ",
+                       str1 = "-",
+                       dob = dd + str1 + mm + str1 + yy;
+
+                       var fullinfo = name  + str + email + str + contact + str + dob + str + inst;
+
+                       var data = {
+                            to : email,
+                            query : fullinfo
+                       }
+
+                       var data1 = {
+                            to : email
+                       }
+
+                       res.render('responsecult1', {
+                            regevent : "Albela, The Mono Acting Competition",
+                            regemail : email,
+                            regphone : contact
+                       });
+
+                       em.kalakrithireg(data1);
+                       em.kalakrithiinfo(data);
+        });
+
+        router.post('/controller/danceregister', function(req, res) {
+                      var name = req.body['bandname'],
+                       email = req.body['bandemail'],
+                       contact = req.body['bandcontact'],
+                       evnt = req.body['bandevent'],
+                       mem1 = req.body['bandmem1'],
+                       mem2 = req.body['bandmem2'],
+                       mem3 = req.body['bandmem3'],
+                       mem4 = req.body['bandmem4'],
+                       mem5 = req.body['bandmem5'],
+                       mem6 = req.body['bandmem6'],
+                       mem7 = req.body['bandmem7'],
+                       mem8 = req.body['bandmem8'],
+                       str = ", ",
+                       fullinfo = name  + str + email + str + contact + str + evnt + str + mem1 + str + mem2 + str + mem3 + str + mem4 + str + mem5 + str + mem6 + str + mem7 + str + mem8;
+
+                       var data = {
+                            to : email,
+                            query : fullinfo
+                       }
+
+                       var data1 = {
+                            to : email
+                       }
+
+                       res.render('responsecult1', {
+                            regevent : evnt,
+                            regemail : email,
+                            regphone : contact
+                       });
+
+                       em.kalakrithireg(data1);
+                       em.kalakrithiinfo(data);
+        });
+
         router.post('/controller/workshopregister', function(req, res) {
                       var name = req.body['inputName'],
                        user = req.body['inputEmail'],
