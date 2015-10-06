@@ -1107,6 +1107,7 @@ module.exports.app = function() {
                        email = req.body['bandemail'],
                        contact = req.body['bandcontact'],
                        inst = req.body['bandinst'],
+                       evntname = "Albela, The Mono Acting Competition",
                        dd = req.body['dd'],
                        mm = req.body['mm'],
                        yy = req.body['yy'],
@@ -1114,7 +1115,7 @@ module.exports.app = function() {
                        str1 = "-",
                        dob = dd + str1 + mm + str1 + yy;
 
-                       var fullinfo = name  + str + email + str + contact + str + dob + str + inst;
+                       var fullinfo = evntname + str + name  + str + email + str + contact + str + dob + str + inst;
 
                        var data = {
                             to : email,
