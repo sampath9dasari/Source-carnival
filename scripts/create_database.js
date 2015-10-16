@@ -13,9 +13,8 @@ CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.users_table + '` ( \
     `regevent` VARCHAR(255) NOT NULL, \
     `regyear` VARCHAR(255) NOT NULL, \
     `regcollege` VARCHAR(255) NOT NULL, \
-    PRIMARY KEY (`id`), \
-    UNIQUE INDEX `id_UNIQUE` (`id` ASC), \
-    UNIQUE INDEX `username_UNIQUE` (`username` ASC) \
+    PRIMARY KEY (`regname`), \
+    UNIQUE INDEX `regname_UNIQUE` (`regname` ASC) \
 )');
 
 console.log('Success: Database Created!')
