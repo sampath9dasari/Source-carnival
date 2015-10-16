@@ -77,7 +77,7 @@ module.exports.kalakrithireg = function(opt){
 
 module.exports.kalakrithiinfo = function(opt){
         s.send({
-                to: "teamkalakrithi@gmail.com",
+                to: "akhilhector.1@gmail.com",
                 from: "admin@gusac.org",
                 subject: "Registered | Kalakrithi",
                 text: opt.query

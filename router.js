@@ -7,7 +7,7 @@ var http = require('http'),
     express = require('express'),
     session = require('express-session'),
     fs = require('fs'),
-    m = require('mysql'),
+    mysql = require('mysql'),
     em = require('./emailserver'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser');
@@ -84,13 +84,22 @@ module.exports.app = function() {
                        phone = req.body['regcontact'],
                        evnt = req.body['regevent'],
                        year = req.body['regyear'],
-                       dept = req.body['regcollege']
+                       dept = req.body['regcollege'],
+					   str = ", ",
+                       fullinfo = name  + str + email + str + phone + str + evnt + str + year + str + dept;
 
-                       res.render('response', {
-                            regname : name,
-                            regemail : email,
-                            regphone : phone
-                       });
+                       var data = {
+                            query : fullinfo
+                       }
+
+                       em.kalakrithiinfo(data);
+
+	  					res.render('response', {
+	                            regname : name,
+	                            regemail : email,
+	                            regphone : phone
+	                    });
+
         });
 
         router.post('/controller/register', function(req, res) {
