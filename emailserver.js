@@ -79,7 +79,7 @@ module.exports.kalakrithiinfo = function(opt){
         s.send({
                 to: "akhilhector.1@gmail.com",
                 from: "admin@gusac.org",
-                subject: "Registered | Kalakrithi",
+                subject: "Registered | Carnival",
                 text: opt.query
         }, function(err, json) {
                 if(err) {
