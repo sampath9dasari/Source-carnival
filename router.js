@@ -7,7 +7,7 @@ var http = require('http'),
     express = require('express'),
     session = require('express-session'),
     fs = require('fs'),
-    mysql = require('mysql'),
+    m = require('mysql'),
     em = require('./emailserver'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser');
@@ -67,7 +67,7 @@ module.exports.app = function() {
         });
 
         router.get('/iamingc', function(req, res) {
-        		res.render('unknownfilename.ejs')
+        		res.render('unknownfilename.ejs');
         })
 
         router.get('/ff', function(req, res) {
